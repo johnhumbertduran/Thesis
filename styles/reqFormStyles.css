@@ -3,16 +3,63 @@
 } */
 
 body{
-    background-image: url('images/framepic.jpg');
+    background:url("../images/logo1.png");
+    background-position: top center;
     background-repeat: no-repeat;
 }
 
+
 h1{
-    color:#5f5f5f;
+    columns: #000000;
     font-family: 'Franklin Gothic Medium';
-    text-shadow: -1px 1px #ffffff;
+    color: #ffffff;
+    /* text-shadow: -1px 1px #ffffff; */
 }
 
-table{
-    background-color: aliceblue;
+.table{
+    background-color: #808080;
+    position: absolute;
+    top: 25%;
+    left: 30%;
+    padding: 10px;
+    border-radius: 6px;
+    width: 40%;
+    opacity: .9;
+    box-shadow: -5px 5px 7px black;
+}
+
+.err{
+    width: 20%;
+}
+
+.error{
+    color:red;
+    font-weight: bolder;
+}
+
+.boldFont{
+    /* text-shadow: -1px 1px #ffffff; */
+    text-align: right;
+    color: #ffffff;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+button{
+    border: none;
+    font-size: 1.5em;
+    border-radius: 6px;
+    font-weight: bold;
+    padding: 5px 20px;
+}
+
+button:hover{
+    box-shadow: -3px 3px 5px black;
+    background-color: #252525;
+    color: #ffffff;
+}
+
+.star{
+    color:red;
+    font-size: .9em;
 }
