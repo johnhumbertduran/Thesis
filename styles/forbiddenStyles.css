@@ -1,0 +1,24 @@
+html{
+    background-color: #df1919;
+}
+
+h1{
+    text-align: center;
+    font-size: 6em;
+    color:#ffffff;
+}
+
+a{
+    background-color: #0b850b;
+    color: #ffffff;
+    text-decoration: none;
+    padding:10px 25px;
+}
+
+a:hover{
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: bold;
+    box-shadow: -3px 3px 10px black;
+    padding:10px 30px;
+}

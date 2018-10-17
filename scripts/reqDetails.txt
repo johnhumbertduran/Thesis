@@ -1,0 +1,75 @@
+
+ var form = document.getElementById("frm");
+ var form2 = document.getElementById("frmGet");
+
+function cat1(){
+
+    if(form2.catGet[0].value == "0"){
+        form2.catGet[0].value = "1";
+    }else{
+        form2.catGet[0].value = "0";
+    }
+}
+
+function cat2(){
+
+    if(form2.catGet[2].value == "0"){
+        form2.catGet[2].value = "1";
+    }else{
+        form2.catGet[2].value = "0";
+    }
+}
+
+function cat3(){
+
+    if(form2.catGet[4].value == "0"){
+        form2.catGet[4].value = "1";
+    }else{
+        form2.catGet[4].value = "0";
+    }
+}
+
+function cat4(){
+
+    if(form2.catGet[6].value == "0"){
+        form2.catGet[6].value = "1";
+    }else{
+        form2.catGet[6].value = "0";
+    }
+}
+
+function cat5(){
+
+    if(form2.catGet[1].value == "0"){
+        form2.catGet[1].value = "1";
+    }else{
+        form2.catGet[1].value = "0";
+    }
+}
+
+function cat6(){
+
+    if(form2.catGet[3].value == "0"){
+        form2.catGet[3].value = "1";
+    }else{
+        form2.catGet[3].value = "0";
+    }
+}
+
+function cat7(){
+
+    if(form2.catGet[5].value == "0"){
+        form2.catGet[5].value = "1";
+    }else{
+        form2.catGet[5].value = "0";
+    }
+}
+
+function cat8(){
+
+    if(form2.catGet[7].value == "0"){
+        form2.catGet[7].value = "1";
+    }else{
+        form2.catGet[7].value = "0";
+    }
+}

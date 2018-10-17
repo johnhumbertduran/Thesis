@@ -38,11 +38,9 @@ h1{
 }
 
 .boldFont{
-    /* text-shadow: -1px 1px #ffffff; */
     text-align: right;
     color: #ffffff;
-    font-size: 1.5em;
-    font-weight: bold;
+    font-size: 1.3em;
 }
 
 button{
