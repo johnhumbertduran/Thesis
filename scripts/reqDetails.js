@@ -94,7 +94,7 @@ function cat8(){
         h = 1;
         form.categoryOfWork9.disabled = false;
         // document.getElementById("other").setAttribute("style","background-color:red;");
-        document.getElementById("other").autofocus;
+        document.getElementById("other").focus();
     }else{
         form.catGet8.value = "0";
         h = 0;

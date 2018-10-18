@@ -183,7 +183,7 @@
                 <td><input type="text" name="room_office" value="<?php echo $room_office; ?>" required></td>
             </tr>
             <tr>
-                <td class="boldFont">Date/Time Needed:</td>
+                <td class="boldFont">Date Needed:</td>
                 <td><input type="date" name="date_time_needed" value="<?php echo $date_time_needed; ?>" required></td>
             </tr>
             <tr>

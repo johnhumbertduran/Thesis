@@ -6,6 +6,7 @@
     <title>Records Request and Inventory Management System of Data Center of ACC</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../styles/requestDetailsStyles.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../styles/nav.css" />    
     <!-- <script src="main.js"></script> -->
 </head>
 <body>
@@ -14,7 +15,7 @@
         session_start();
 
         include("../connections.php");
-        include("nav.php");
+        // include("nav.php");
     
             if(isset($_SESSION["userName"])){
         
@@ -194,33 +195,35 @@
                         $rfid = $_POST["categoryOfWork7"];
                     }
                     
-                    if(empty($_POST["categoryOfWork8"])){
+                    if(empty($_POST["catGet8"])){
                         
+                        // $others = "";
+
                     }else{
                         
-                    
+                        // $others = $_POST["categoryOfWork8"];
                     
                         
                         if(empty($_POST["categoryOfWork9"])){
                             // $specified = "";
-                            echo"<script> alert('No data to be saved!');</script>";
+                            // echo"<script> alert('No data to be saved!');</script>";
                         }else{
                             $specified = $_POST["categoryOfWork9"];
                               
                         }
                     }
 
+                    mysqli_query($connections, "INSERT INTO requestertbl (rollNo,reqName,room,dateTimeNeeded,dateSubmitted,telNo)
+                    VALUES('$transaction_no','$requester_name','$room_office','$date_time_needed','$var_date','$telephone_mobile_no')");
+    
+                    mysqli_query($connections, "INSERT INTO requesttbl (rollNo,categoryOfWork1,categoryOfWork2,categoryOfWork3,categoryOfWork4,categoryOfWork5,categoryOfWork6,categoryOfWork7,categoryOfWork8,catchCat)
+                    VALUES('$transaction_no','$compRep','$lan','$assist','$printer','$cctv','$email_LogIn','$rfid','$specified','$value_all')");
+            
+                    // echo "<script>alert('Record has been successfully added!');</script>";
+                    echo "<script>window.location.href='requesterForm.php?$success&&notify=Record has been successfully added!&&$end'; alert('Record has been successfully added!');</script>";
 
                 }
 
-                mysqli_query($connections, "INSERT INTO requestertbl (rollNo,reqName,room,dateTimeNeeded,dateSubmitted,telNo)
-                VALUES('$transaction_no','$requester_name','$room_office','$date_time_needed','$var_date','$telephone_mobile_no')");
-
-                mysqli_query($connections, "INSERT INTO requesttbl (rollNo,categoryOfWork1,categoryOfWork2,categoryOfWork3,categoryOfWork4,categoryOfWork5,categoryOfWork6,categoryOfWork7,categoryOfWork8,catchCat)
-				VALUES('$transaction_no','$compRep','$lan','$assist','$printer','$cctv','$email_LogIn','$rfid','$specified','$value_all')");
-		
-                // echo "<script>alert('Record has been successfully added!');</script>";
-                echo "<script>window.location.href='requesterForm.php?$success&&notify=Record has been successfully added!&&$end'; alert('Record has been successfully added!');</script>";
 
 
             }
@@ -234,6 +237,11 @@
     }
     ?>
 
+    <center>
+	<div id="nav">
+    <a href="#" class="nav" id="one">Make Request</a><a href="register" class="nav" id="two">Nav 2</a><a href="currentElection" class="nav" id="three">Nav 3</a><a href="previousElection" class="nav" id="four">Nav 4</a><a href="studentRecord" class="nav" id="five">Nav 5</a><a href="candidateRecord" class="nav" id="six">Nav 6</a><a href="../logout.php" class="nav">Log Out</a>
+	</div>
+    </center>
 
 
 
@@ -249,14 +257,14 @@
     <input type="text" readonly name="var_date" value="<?php echo $var_date; ?>"><br>
     <input type="text" readonly name="telephone_mobile_no" value="<?php echo $telephone_mobile_no; ?>"><br>
     <input type="text" readonly name="value_all" value="<?php echo $value_all; ?>" placeholder="All"><br>
-    <input type="text" name="catGet1" value="<?php echo $catGet1; ?>">
-    <input type="text" name="catGet2" value="<?php echo $catGet2; ?>"><br>
-    <input type="text" name="catGet3" value="<?php echo $catGet3; ?>">
-    <input type="text" name="catGet4" value="<?php echo $catGet4; ?>"><br>
-    <input type="text" name="catGet5" value="<?php echo $catGet5; ?>">
-    <input type="text" name="catGet6" value="<?php echo $catGet6; ?>"><br>
-    <input type="text" name="catGet7" value="<?php echo $catGet7; ?>">
-    <input type="text" name="catGet8" value="<?php echo $catGet8; ?>">
+    <input type="text" name="catGet1" readonly value="<?php echo $catGet1; ?>">
+    <input type="text" name="catGet2" readonly value="<?php echo $catGet2; ?>"><br>
+    <input type="text" name="catGet3" readonly value="<?php echo $catGet3; ?>">
+    <input type="text" name="catGet4" readonly value="<?php echo $catGet4; ?>"><br>
+    <input type="text" name="catGet5" readonly value="<?php echo $catGet5; ?>">
+    <input type="text" name="catGet6" readonly value="<?php echo $catGet6; ?>"><br>
+    <input type="text" name="catGet7" readonly value="<?php echo $catGet7; ?>">
+    <input type="text" name="catGet8" readonly value="<?php echo $catGet8; ?>">
     </div>
                 <table border="0">
                     <tr><th colspan="3"><h1>Request Details</h1></th></tr>
