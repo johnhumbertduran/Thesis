@@ -50,7 +50,7 @@
     
         setInterval(function(){
         
-            $('#retriever').load('retriever.php');
+            // $('#retriever').load('retriever.php');
         
         
         }, 1000);
@@ -59,19 +59,7 @@
     
     
     <?php
-    
-            if(empty($_GET["get_Delete"])){
-        
-        
-        }else{
-        
-            // include("deleteStudentRecord.php");
-        
-        }
-    
-    
-    
-            if(empty($_GET["get_Update"])){
+   
     
     ?>
     
@@ -83,12 +71,7 @@
     </div>
     
     <?php
-    
-            }else{
-    
-            // include("updateStudentRecord.php");
-    
-        }
+
         
     ?>
     

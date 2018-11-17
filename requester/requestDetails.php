@@ -213,11 +213,11 @@
                         }
                     }
 
-                    mysqli_query($connections, "INSERT INTO requestertbl (rollNo,reqName,room,dateTimeNeeded,dateSubmitted,telNo)
-                    VALUES('$transaction_no','$requester_name','$room_office','$date_time_needed','$var_date','$telephone_mobile_no')");
+                    mysqli_query($connections, "INSERT INTO requestertbl (rollNo,reqName,room,dateTimeNeeded,dateSubmitted,telNo,stat)
+                    VALUES('$transaction_no','$requester_name','$room_office','$date_time_needed','$var_date','$telephone_mobile_no','1')");
     
-                    mysqli_query($connections, "INSERT INTO requesttbl (rollNo,categoryOfWork1,categoryOfWork2,categoryOfWork3,categoryOfWork4,categoryOfWork5,categoryOfWork6,categoryOfWork7,categoryOfWork8,catchCat)
-                    VALUES('$transaction_no','$compRep','$lan','$assist','$printer','$cctv','$email_LogIn','$rfid','$specified','$value_all')");
+                    mysqli_query($connections, "INSERT INTO requesttbl (rollNo,categoryOfWork1,categoryOfWork2,categoryOfWork3,categoryOfWork4,categoryOfWork5,categoryOfWork6,categoryOfWork7,categoryOfWork8,stat)
+                    VALUES('$transaction_no','$compRep','$lan','$assist','$printer','$cctv','$email_LogIn','$rfid','$specified','1')");
             
                     // echo "<script>alert('Record has been successfully added!');</script>";
                     echo "<script>window.location.href='requesterForm.php?$success&&notify=Record has been successfully added!&&$end'; alert('Record has been successfully added!');</script>";

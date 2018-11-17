@@ -9,18 +9,41 @@
 </head>
 <body>
 
+
+         <?php
+	
+	session_start();
+
+	include("../connections.php");
+	include("nav.php");
+
+		if(isset($_SESSION["userName"])){
+	
+		$userName = $_SESSION["userName"];
+		
+		$authentication = mysqli_query($connections, "SELECT * FROM usertbl WHERE userName='$userName' ");
+		$fetch = mysqli_fetch_assoc($authentication);
+		$account_type = $fetch["account_type"];
+	
+		if($account_type != 1){
+		
+			echo "<script>window.location.href='../forbidden.php';</script>";
+		
+		}
+	
+	}else{
+	
+			echo "<script>window.location.href='../';</script>";
+	
+	}
+
+
+    ?>
+
     <?php
-    	include("../connections.php");
 
-     $fName = $mName = $lName = $uName = $pass = $account_type = $catAcc_type ="";
-     $fNameErr = $mNameErr = $lNameErr = $uNameErr = $passErr = $account_typeErr = "";
-
-
-
-
-     ?>
-
-    <?php
+    $fName = $mName = $lName = $uName = $pass = $account_type = $catAcc_type ="";
+    $fNameErr = $mNameErr = $lNameErr = $uNameErr = $passErr = $account_typeErr = "";
 
 
     if(isset($_POST["next"])){
