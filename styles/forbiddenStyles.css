@@ -2,6 +2,8 @@ html{
     background-color: #df1919;
 }
 
+* {box-sizing:border-box}
+
 h1{
     text-align: center;
     font-size: 6em;

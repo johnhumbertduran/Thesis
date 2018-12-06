@@ -188,7 +188,6 @@ font-size: .9em;
     <link rel="stylesheet" type="text/css" media="screen" href="../styles/nav.css" />
 
 
-
 <center>
 
 <table border="0" width="100%" style="background:#fff; ">
@@ -215,8 +214,9 @@ font-size: .9em;
 	include("../connections.php");
 	
 	$newName = $newRoom = $newDateNeed = $newDateSub = $newTel = "";
+
 	
-	$retrieve_query = mysqli_query($connections,"SELECT * FROM requestertbl WHERE stat='1' ORDER BY rollNo DESC ");
+	$retrieve_query = mysqli_query($connections,"SELECT * FROM requestertbl where stat='1' ORDER BY rollNo DESC ");
 	
 	while($row_requesters = mysqli_fetch_assoc($retrieve_query)){
 	
@@ -440,7 +440,7 @@ font-size: .9em;
 				
 							<br/>
 					
-					<input type='submit' value='Update' name='update' class='updateBtn' style='border:none; padding:8px; font-size:1em; cursor:pointer;'> <a  class='deleteBtn' style=" padding:8.5px; font-size:1em; cursor:pointer;" onclick="closeB()">Cancel</a>
+					<input type='submit' value='Update' name='update' class='updateBtn' style='border:none; padding:8px; font-size:1em; cursor:pointer;'> <a href="?" class='deleteBtn' style=" padding:8.5px; font-size:1em; cursor:pointer;">Cancel</a>
 				</form>
 				
 		</div>
@@ -492,7 +492,7 @@ font-size: .9em;
 							<br/>
 							<br/>
 					
-					<input type='submit' value='Delete' name='delete' class='updateBtn' style='border:none; padding:8px; font-size:1em; cursor:pointer;'> <a  class='deleteBtn' style=" padding:8.5px; font-size:1em; cursor:pointer;" onclick="closeB()">Cancel</a>
+					<input type='submit' value='Delete' name='delete' class='updateBtn' style='border:none; padding:8px; font-size:1em; cursor:pointer;'> <a href="?" class='deleteBtn' style=" padding:8.5px; font-size:1em; cursor:pointer;">Cancel</a>
 				</form>
 				
 			
@@ -619,7 +619,7 @@ font-size: .9em;
 		}
 
 		function closeB(){
-		document.getElementById("modal").setAttribute("style","display:none;");
+		window.location.href="?";
 		}
 
         function isNumberKey(evt){

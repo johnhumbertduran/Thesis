@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Records Request and Inventory Management System of Data Center of ACC</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="../images/logo.png">
     <link rel="stylesheet" type="text/css" media="screen" href="../styles/requestDetailsStyles.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../styles/nav.css" />    
     <!-- <script src="main.js"></script> -->
@@ -47,9 +48,12 @@
         $email_LogIn = "Email or Login Account";
         $rfid = "RFID Photo/Sig. Capturing";
         
+        $notifs = mysqli_query($connections, "SELECT notifCount FROM notiftbl ");
+        $getNotif = mysqli_fetch_assoc($notifs);
+        $notif = $getNotif["notifCount"];
 
+    // echo"$notif";
         ?>
-
     <?php
     if((empty($_GET["transaction_no_data"])) || (empty($_GET["requester_name_data"])) || (empty($_GET["room_office_data"])) || (empty($_GET["date_time_needed_data"])) || (empty($_GET["date_data"])) || (empty($_GET["telephone_mobile_no_data"]))){
         echo"<script>alert('Sorry, No data was transmitted!'); window.location.href = 'requesterForm.php';</script>";
@@ -219,6 +223,10 @@
                     mysqli_query($connections, "INSERT INTO requesttbl (rollNo,categoryOfWork1,categoryOfWork2,categoryOfWork3,categoryOfWork4,categoryOfWork5,categoryOfWork6,categoryOfWork7,categoryOfWork8,stat)
                     VALUES('$transaction_no','$compRep','$lan','$assist','$printer','$cctv','$email_LogIn','$rfid','$specified','1')");
             
+                    $notif += 1;
+
+					mysqli_query($connections, "UPDATE notiftbl SET notifCount = '$notif' ");
+
                     // echo "<script>alert('Record has been successfully added!');</script>";
                     echo "<script>window.location.href='requesterForm.php?$success&&notify=Record has been successfully added!&&$end'; alert('Record has been successfully added!');</script>";
 
@@ -237,11 +245,9 @@
     }
     ?>
 
-    <center>
 	<div id="nav">
-    <a href="#" class="nav" id="one">Make Request</a><a href="register" class="nav" id="two">Nav 2</a><a href="currentElection" class="nav" id="three">Nav 3</a><a href="previousElection" class="nav" id="four">Nav 4</a><a href="studentRecord" class="nav" id="five">Nav 5</a><a href="candidateRecord" class="nav" id="six">Nav 6</a><a href="../logout.php" class="nav">Log Out</a>
+    <a href="requesterForm" class="nav" id="one">Make Request</a><a href="../logout.php" class="nav">Log Out</a>
 	</div>
-    </center>
 
 
 
@@ -253,8 +259,8 @@
     <input type="text" readonly name="transaction_no" value="<?php echo $transaction_no; ?>"><br>
     <input type="text" readonly name="requester_name" value="<?php echo $requester_name; ?>"><br>
     <input type="text" readonly name="room_office" value="<?php echo $room_office; ?>"><br>
-    <input type="text" readonly name="date_time_needed" value="<?php echo $date_time_needed; ?>"><br>
-    <input type="text" readonly name="var_date" value="<?php echo $var_date; ?>"><br>
+    <input type="date" readonly name="date_time_needed" value="<?php echo $date_time_needed; ?>"><br>
+    <input type="date" readonly name="var_date" value="<?php echo $var_date; ?>"><br>
     <input type="text" readonly name="telephone_mobile_no" value="<?php echo $telephone_mobile_no; ?>"><br>
     <input type="text" readonly name="value_all" value="<?php echo $value_all; ?>" placeholder="All"><br>
     <input type="text" name="catGet1" readonly value="<?php echo $catGet1; ?>">
@@ -270,35 +276,37 @@
                     <tr><th colspan="3"><h1>Request Details</h1></th></tr>
                     <tr>
                         <td><b>Category of Work:</b></td>
-                        <td><input type="checkbox" name="categoryOfWork1" id="1" onclick="cat1()" value="<?php echo $compRep; ?>">Computer Repair</td>
-                        <td><input type="checkbox" name="categoryOfWork2" id="5" onclick="cat5()" value="<?php echo $lan; ?>">LAN/Internet Connection</td>
+                        <td><input type="checkbox" name="categoryOfWork1" id="1" onclick="cat1()" value="<?php echo $compRep; ?>"><a href="#" class="che" id="1" onclick="cat1Che()" > Computer Repair </a></td>
+                        <td><input type="checkbox" name="categoryOfWork2" id="5" onclick="cat5()" value="<?php echo $lan; ?>"><a href="#" class="che" id="5" onclick="cat5Che()" > LAN/Internet Connection </a></td>
                     </tr>
 
                     <tr>
                         <td></td>
-                        <td><input type="checkbox" name="categoryOfWork3" id="2" onclick="cat2()" value="<?php echo $assist; ?>">Assist/Install LCD Projector</td>
-                        <td><input type="checkbox" name="categoryOfWork4" id="6" onclick="cat6()" value="<?php echo $printer; ?>">Printer Repair</td>
+                        <td><input type="checkbox" name="categoryOfWork3" id="2" onclick="cat2()" value="<?php echo $assist; ?>"><a href="#" class="che" id="2" onclick="cat2Che()" > Assist/Install LCD Projector </a></td>
+                        <td><input type="checkbox" name="categoryOfWork4" id="6" onclick="cat6()" value="<?php echo $printer; ?>"><a href="#" class="che" id="6" onclick="cat6Che()" > Printer Repair </a></td>
                     </tr>
 
                     <tr>
                         <td></td>
-                        <td><input type="checkbox" name="categoryOfWork5" id="3" onclick="cat3()" value="<?php echo $cctv; ?>">CCTV Repair</td>
-                        <td><input type="checkbox" name="categoryOfWork6" id="7" onclick="cat7()" value="<?php echo $email_LogIn; ?>">Email or Login Account</td>
+                        <td><input type="checkbox" name="categoryOfWork5" id="3" onclick="cat3()" value="<?php echo $cctv; ?>"><a href="#" class="che" id="3" onclick="cat3Che()" > CCTV Repair </a></td>
+                        <td><input type="checkbox" name="categoryOfWork6" id="7" onclick="cat7()" value="<?php echo $email_LogIn; ?>"><a href="#" class="che" id="7" onclick="cat7Che()" > Email or Login Account </a></td>
                     </tr>
 
                     <tr>
                         <td></td>
-                        <td><input type="checkbox" name="categoryOfWork7" id="4" onclick="cat4()" value="<?php echo $rfid; ?>">RFID Photo/Sig. Capturing</td>
-                        <td><input type="checkbox" name="categoryOfWork8" id="8" onclick="cat8()" value="<?php echo $others; ?>">Others, Please specify.</td>
+                        <td><input type="checkbox" name="categoryOfWork7" id="4" onclick="cat4()" value="<?php echo $rfid; ?>"><a href="#" class="che" id="4" onclick="cat4Che()" > RFID Photo/Sig. Capturing </a></td>
+                        <td><input type="checkbox" name="categoryOfWork8" id="8" onclick="cat8()" value="<?php echo $others; ?>"><a href="#" class="che" id="8" onclick="cat8Che()" > Others, Please specify. </a></td>
                     </tr>
                     <tr></tr>
                     <tr></tr>
                     <tr></tr>
                     
                     <tr>
-
-                        <td colspan="3"><center><input type="text" name="categoryOfWork9" id="other" size="70px" value="<?php echo $specified; ?>" disabled></center></td>
+                        <td colspan="3"  rows="3" cols="50"><center><textarea type="text" name="categoryOfWork9" id="other" value="<?php echo $specified; ?>" form="frm" placeholder="Others..." disabled></textarea></center></td>
+                        <!-- <td colspan="3"><center><input type="text" name="categoryOfWork9" id="other" size="70px" value="<?php echo $specified; ?>" disabled></center></td> -->
                     </tr>
+
+                    
                     <tr>
                         <td><input type="submit" name="button" value="Submit" class="button"></td>
                     </tr>
@@ -307,7 +315,7 @@
         </div>
     </center>
     <br>
-    <a href="requesterForm.php" class="button">back</a>
+    <!-- <a href="requesterForm.php" class="button">Back</a> -->
 
 
     <script src="../scripts/reqDetails.js"></script>

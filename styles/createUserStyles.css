@@ -1,9 +1,11 @@
-
-body{
-    background:url("../images/logo1.png");
+html{
+    background-color: #d6d6d6;
+    background:url("../images/logo.png");
     background-position: top center;
     background-repeat: no-repeat;
 }
+
+* {box-sizing:border-box}
 
 
 h1{
@@ -19,7 +21,7 @@ h1{
     top: 25%;
     left: 30%;
     padding: 10px;
-    border-radius: 6px;
+    border-radius: 20px;
     width: 40%;
     opacity: .9;
     box-shadow: -5px 5px 7px black;
@@ -64,4 +66,8 @@ button:hover{
 .external_data{
     position:absolute;
     left: -70%;
+}
+
+#catchAcc{
+    display: none;
 }
