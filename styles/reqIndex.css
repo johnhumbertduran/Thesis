@@ -1,11 +1,8 @@
 html{
     background-color: #d6d6d6;
-}
-
-* {box-sizing:border-box}
-
-body{
-    background:url("../images/logo1.png");
+    background:url("../images/logo.png");
     background-position: top center;
     background-repeat: no-repeat;
 }
+
+* {box-sizing:border-box}

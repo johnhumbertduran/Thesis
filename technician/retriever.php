@@ -188,7 +188,6 @@ font-size: .9em;
     <link rel="stylesheet" type="text/css" media="screen" href="../styles/nav.css" />
 
 
-
 <center>
 
 <table border="0" width="100%" style="background:#fff; ">
@@ -197,12 +196,12 @@ font-size: .9em;
 	
 		<td width="10%" class="tdTop"><center><b>Transaction No</b></center></td>
 		<td width="16%" class="tdTop"><center><b>Name</b></center></td>
-		<td width="14%" class="tdTop"><center><b>Room</b></center></td>
+		<td width="10%" class="tdTop"><center><b>Room</b></center></td>
 		<td width="16%" class="tdTop siz"><center><b>Date Submitted</b></center></td>
 		<td width="16%" class="tdTop siz"><center><b>Date Needed</b></center></td>
 		<td width="16%" class="tdTop"><center><b>Telephone No</b></center></td>
-		<td width="16%" class="tdTop siz"><center><b>View Request</b></center></td>
-		<td width="16%" class="tdTop"><center><b>Action</b></center></td>
+		<td width="10%" class="tdTop siz"><center><b>View Request</b></center></td>
+		<td width="20%" class="tdTop"><center><b>Action</b></center></td>
 	
 	</tr>
 
@@ -215,8 +214,9 @@ font-size: .9em;
 	include("../connections.php");
 	
 	$newName = $newRoom = $newDateNeed = $newDateSub = $newTel = "";
+
 	
-	$retrieve_query = mysqli_query($connections,"SELECT * FROM requestertbl WHERE stat='1' ORDER BY rollNo DESC ");
+	$retrieve_query = mysqli_query($connections,"SELECT * FROM requestertbl where stat='1' ORDER BY rollNo DESC ");
 	
 	while($row_requesters = mysqli_fetch_assoc($retrieve_query)){
 	
@@ -228,6 +228,8 @@ font-size: .9em;
 	$db_dateTimeNeeded = $row_requesters["dateTimeNeeded"];
 	$db_dateSubmitted = $row_requesters["dateSubmitted"];
 	$db_telNo = $row_requesters["telNo"];
+
+		$notif1 = md5(rand(1,9));
 		
 		$jScript = md5(rand(1,9));
 		
@@ -236,7 +238,8 @@ font-size: .9em;
 		$get_Update = md5(rand(1,9));
 		
 		$get_Delete = md5(rand(1,9));
-	
+		
+		$get_Accomplish = md5(rand(1,9));
 	
 		echo"
 		
@@ -244,20 +247,24 @@ font-size: .9em;
 		
 			<td><center>$db_rollNo</center></td>
 			<td><center>$db_reqName</center></td>
-			<td><center>$db_room</center></td>
+			<td width='10%'><center>$db_room</center></td>
 			<td><center>$db_dateSubmitted</center></td>
 			<td><center>$db_dateTimeNeeded</center></td>
 			<td><center>$db_telNo</center></td>
-			<td><center><a href='?jScript=$jScript && newScript=$new_Script && view_Request=$get_Update && ver_0x=$roll&&$get_Delete ' class='view'>View Request</a></center></td>
-			<td>
+			<td width='10%'><center><a href='?jScript=$jScript && newScript=$new_Script && view_Request=$get_Update && ver_0x=$roll&&$get_Delete&&redir_=$notif1 ' class='view'>View Request</a></center></td>
+			<td width='20%'>
 				<center>
 					<br/>
 					
-					<a href='	?jScript=$jScript && newScript=$new_Script && get_Update=$get_Update && ver_01=$roll&&$get_Delete ' class='updateBtn'>Update</a>
+					<a href='	?jScript=$jScript && newScript=$new_Script && get_Update=$get_Update && ver_01=$roll&&$get_Delete&&redir_=$notif1 ' class='updateBtn'>Update</a>
 					
 					&nbsp
 					
-					<a href='	?jScript=$jScript && newScript=$new_Script && get_Delete=$get_Delete && ver_02=$roll&&$get_Update ' class='deleteBtn'>Delete</a>
+					<a href='	?jScript=$jScript && newScript=$new_Script && get_Delete=$get_Delete && ver_02=$roll&&$get_Update&&redir_=$notif1 ' class='deleteBtn'>Delete</a>
+					
+					&nbsp
+					
+					<a href='	?jScript=$jScript && newScript=$new_Script && get_Accomplish=$get_Accomplish && ver_03=$roll&&$get_Update&&redir_=$notif1 ' class='accom'>Accomplish</a>
 					
 					<br/>
 					<br/>
@@ -397,7 +404,7 @@ font-size: .9em;
 								
 								mysqli_query($connections, "UPDATE requestertbl SET reqName = '$db_Name',room = '$db_Room', dateTimeNeeded = '$db_DateNeed', /* dateSubmitted = '$db_DateSub', */ telNo = '$db_Tel' WHERE rollNo = '$roll' ");
 								
-								echo"<script>window.location.href='?'; alert('Record succesfully Updated!');</script>";
+								echo"<script>window.location.href='?redir_=$notif1'; alert('Record succesfully Updated!');</script>";
 							}
 						}
 					}
@@ -440,7 +447,7 @@ font-size: .9em;
 				
 							<br/>
 					
-					<input type='submit' value='Update' name='update' class='updateBtn' style='border:none; padding:8px; font-size:1em; cursor:pointer;'> <a  class='deleteBtn' style=" padding:8.5px; font-size:1em; cursor:pointer;" onclick="closeB()">Cancel</a>
+					<input type='submit' value='Update' name='update' class='updateBtn' style='border:none; padding:8px; font-size:1em; cursor:pointer;'> <a href="?redir_=ok" class='deleteBtn' style=" padding:8.5px; font-size:1em; cursor:pointer;">Cancel</a>
 				</form>
 				
 		</div>
@@ -472,7 +479,7 @@ font-size: .9em;
 		
 			mysqli_query($connections, "UPDATE requestertbl SET stat=0 WHERE rollNo = '$roll' ");
 	
-				echo"<script>window.location.href='?'; alert('Record succesfully Deleted!');</script>";
+				echo"<script>window.location.href='?redir_=$notif1'; alert('Record succesfully Deleted!');</script>";
 			
 			
 		
@@ -492,7 +499,62 @@ font-size: .9em;
 							<br/>
 							<br/>
 					
-					<input type='submit' value='Delete' name='delete' class='updateBtn' style='border:none; padding:8px; font-size:1em; cursor:pointer;'> <a  class='deleteBtn' style=" padding:8.5px; font-size:1em; cursor:pointer;" onclick="closeB()">Cancel</a>
+					<input type='submit' value='Delete' name='delete' class='updateBtn' style='border:none; padding:8px; font-size:1em; cursor:pointer;'> <a href="?redir_=ok" class='deleteBtn' style=" padding:8.5px; font-size:1em; cursor:pointer;">Cancel</a>
+				</form>
+				
+			
+		</div>
+	</div>
+	
+	<?php
+	}
+	?>
+
+
+
+<?php
+
+	if(empty($_GET['get_Accomplish'])){
+
+	} else {
+
+		$roll = $_GET['ver_03'];
+	
+
+		$acom = mysqli_query($connections, "SELECT * FROM requestertbl where rollNo='$roll' ");
+	
+		$rowAcom = mysqli_fetch_assoc($acom);
+		
+		$db_Requester = $rowAcom["reqName"];
+		
+		
+		
+				if(isset($_POST["accomplish"])){
+		
+			mysqli_query($connections, "UPDATE requestertbl SET stat=3 WHERE rollNo = '$roll' ");
+	
+				echo"<script>window.location.href='?redir_=$notif1'; alert('Record was accomplished!');</script>";
+			
+			
+		
+		}
+
+?>
+	<div id="modal">
+		<div class="modal-content">
+			<div class="close" onclick="closeB()" style="cursor:pointer;">X</div>
+				<form method="POST">
+							<br>
+							<h1 class="label">Request Accomplished</h1>
+				<font style="text-shadow:0 2px 1px #fff, 0 -2px 1px #fff, 2px 0 1px #fff, -2px 0 1px #fff;" color="black"><b><?php echo "Is "?></br><font style="text-shadow:0 2px 1px #fff, 0 -2px 1px #fff, 2px 0 1px #fff, -2px 0 1px #fff;" size="5em" color="red"><?php echo $db_Requester . "'s";?><br></font><?php echo "request accomplished?"; ?></b></font>
+				
+							<br/>
+							<br/>
+							<br/>
+							<br/>
+							<br/>
+					
+					<input type='submit' value='Accomplished' name='accomplish' class='accom' style='border:none; padding:8px; font-size:1em; cursor:pointer;'> <a href="?redir_=ok" class='deleteBtn' style=" padding:8.5px; font-size:1em; cursor:pointer;">Cancel</a>
 				</form>
 				
 			
@@ -619,9 +681,9 @@ font-size: .9em;
 		}
 
 		function closeB(){
-		document.getElementById("modal").setAttribute("style","display:none;");
+		window.location.href="?redir_=ok";
 		}
-
+		
         function isNumberKey(evt){
 	
 		var charCode = (evt.which) ? evt.which : event.keyCode

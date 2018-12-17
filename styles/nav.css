@@ -3,6 +3,7 @@
     text-decoration: none;
     font-size: 1.5em;
     padding: 10px 20px;
+    margin-left: -.8%;
     display: inline;
     color: #ffffff;
 }
@@ -14,7 +15,8 @@
 
 
 #nav{
-    background-color: #c0c0c0;
+    background-color: #888888;
+    /* background-color: #c0c0c0; */
     padding: 10px;
     width:100%;
 }
@@ -35,6 +37,23 @@
     padding: 7px;
 }
 
+.accom{
+    background-color: #c5a206;
+    color:#ffffff;
+    text-decoration: none;
+    display: inline-block;
+    padding: 7px;
+}
+
+.accomRet{
+    background-color: #c5a206;
+    font-weight: bold;
+    color:#000000;
+    text-decoration: none;
+    display: inline-block;
+    padding: 7px;
+}
+
 .view{
     background-color: #1aadda;
     /* background-color: #1aadda; */
@@ -46,15 +65,27 @@
 
 .updateBtn:hover{
     background-color: #36e636;
-    box-shadow: -3px 3px 5px #474747;
+    box-shadow: -3px 3px 5px #080808f1;
 }
 
 .deleteBtn:hover{
     background-color: #fa7c7c;
-    box-shadow: -3px 3px 5px #474747;
+    box-shadow: -3px 3px 5px #080808f1;
+}
+
+.accom:hover{
+    background-color: #ffda37;
+    box-shadow: -3px 3px 5px #080808f1;
+    /* color: #111111; */
+}
+
+.accomRet:hover{
+    background-color: #ffda37;
+    box-shadow: -3px 3px 5px #080808f1;
+    /* color: #111111; */
 }
 
 .view:hover{
     background-color: #52d1f8;
-    box-shadow: -3px 3px 5px #474747;
+    box-shadow: -3px 3px 5px #080808f1;
 }

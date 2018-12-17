@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Create User</title>
+    <link rel="icon" type="image/png" href="../images/logo.png">
     <link rel="stylesheet" type="text/css" media="screen" href="../styles/createUserStyles.css" />
 </head>
 <body>
@@ -101,7 +102,7 @@
 
                 mysqli_query($connections, "INSERT INTO usertbl (firstName,middleName,lastName,username,pass,account_type)
                 VALUES('$fName','$mName','$lName','$uName','$pass','$catAcc_type')");
-                echo"<script>alert('hey');</script>";
+                echo"<script>window.location.href='../'; alert('User Account has been succesfully added!');</script>";
             }
             
         }
@@ -142,7 +143,7 @@
             </tr>
             <tr>
                 <td class="boldFont"><span class="star"><sup><?php echo $passErr; ?></span> Password:</td>
-                <td><input type="text" name="pass" value="<?php echo $pass; ?>" required></td>
+                <td><input type="password" name="pass" value="<?php echo $pass; ?>" required></td>
             </tr>
             <tr>
                 <td class="boldFont"><span class="star"><sup><?php echo $account_typeErr; ?></span> Account Type:</td>
@@ -157,7 +158,7 @@
             </tr>
             <tr><td><input type="text" name="catAcc_type" id="catchAcc" value="<?php echo $catAcc_type; ?>" readonly></td></tr>
             
-            <tr><td colspan="2"><br><center><button type="submit" name="next">Next</button></center></td></tr>
+            <tr><td colspan="2"><br><center><button type="submit" name="next">Submit</button></center></td></tr>
         </table>
         </form>
         </div>

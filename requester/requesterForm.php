@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Requester Form</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="../images/logo.png">
     <link rel="stylesheet" type="text/css" media="screen" href="../styles/reqFormStyles.css" />
     <!-- <script src="main.js"></script> -->
 </head>
@@ -147,9 +148,27 @@
             
             }else{
 
-                echo"<script> window.location.href = 'requestDetails.php?ver_1=$dir_1&&transaction_no_data=$transaction_no_data&&$loca&&1=$transaction_no&&requester_name_data=$requester_name_data&&2=$requester_name&&ver_2=$dir_2&&room_office_data=$room_office_data&&3=$room_office&&date_time_needed_data=$date_time_needed_data&&4=$date_time_needed&&redirect=$dir_3&&date_data=$date_data&&5=$var_date&&local=$loca&&6=$telephone_mobile_no&&telephone_mobile_no_data=$telephone_mobile_no_data'; </script>";
-                // ver_1=$dir_1&&trno=$requester_name_data&&redirect=$dir_2&&loc=$loca&&do=$dir_3
-                
+                $dateN = strtotime($date_time_needed);
+                $dateNow = strtotime($var_date);
+
+                if( $dateN <= $dateNow){
+
+                    echo "<script>alert('Date needed is prior to the date today!');</script>";
+                    $date_time_needed = "";
+                }else{
+
+                    if((strlen($telephone_mobile_no) < 11) /* || (strlen($telephone_mobile_no) > 8 && strlen($telephone_mobile_no) < 11) */ ){
+                            
+                        echo"<script>alert('Contact number must be 11 digits!');</script>";                                                    
+                   
+                    }else{
+
+                        
+                        echo"<script> window.location.href = 'requestDetails.php?ver_1=$dir_1&&transaction_no_data=$transaction_no_data&&$loca&&1=$transaction_no&&requester_name_data=$requester_name_data&&2=$requester_name&&ver_2=$dir_2&&room_office_data=$room_office_data&&3=$room_office&&date_time_needed_data=$date_time_needed_data&&4=$date_time_needed&&redirect=$dir_3&&date_data=$date_data&&5=$var_date&&local=$loca&&6=$telephone_mobile_no&&telephone_mobile_no_data=$telephone_mobile_no_data'; </script>";
+                        // ver_1=$dir_1&&trno=$requester_name_data&&redirect=$dir_2&&loc=$loca&&do=$dir_3
+                        
+                    }   
+                }
             }
 
             }
@@ -188,10 +207,10 @@
             </tr>
             <tr>
                 <td class="boldFont">Date:</td>
-                <td><input type="text" name="var_date" value="<?php echo date("m/d/y"); ?>" readonly></td>
+                <td><input type="text" name="var_date" value="<?php echo date("m-d-y"); ?>" readonly></td>
             </tr>
             <tr>
-                <td class="boldFont">Telephone/Mobile No.:</td>
+                <td class="boldFont">Mobile No.:</td>
                 <td><input type="text" name="telephone_mobile_no" value="<?php echo $telephone_mobile_no; ?>"  maxlength="11" onkeypress='return isNumberKey(event)' required></td>
             </tr>
 

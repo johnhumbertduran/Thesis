@@ -100,5 +100,117 @@ function cat8(){
         h = 0;
         form.categoryOfWork9.disabled = true;
         // form.categoryOfWork9.value = "";
+        document.getElementById("other").value = "";
+    }
+}
+
+
+function cat1Che(){
+
+    if( a == 0 ){
+        form.catGet1.value = "1";
+        form.categoryOfWork1.checked = true;
+        a = 1;
+    }else{
+        form.catGet1.value = "0";
+        form.categoryOfWork1.checked = false;
+        a = 0;
+    }
+}
+
+function cat2Che(){
+    
+    if( b == 0 ){
+        form.catGet3.value = "1";
+        form.categoryOfWork3.checked = true;
+        b = 1;
+    }else{
+        form.catGet3.value = "0";
+        form.categoryOfWork3.checked = false;
+        b = 0;
+    }
+}
+
+function cat3Che(){
+    
+    if( c == 0 ){
+        form.catGet5.value = "1";
+        form.categoryOfWork5.checked = true;
+        c = 1;
+    }else{
+        form.catGet5.value = "0";
+        form.categoryOfWork5.checked = false;
+        c = 0;
+    }
+}
+
+function cat4Che(){
+    
+    if( d == 0 ){
+        form.catGet7.value = "1";
+        form.categoryOfWork7.checked = true;
+        d = 1;
+    }else{
+        form.catGet7.value = "0";
+        form.categoryOfWork7.checked = false;
+        d = 0;
+    }
+}
+
+function cat5Che(){
+    
+    if( e == 0 ){
+        form.catGet2.value = "1";
+        form.categoryOfWork2.checked = true;
+        e = 1;
+    }else{
+        form.catGet2.value = "0";
+        form.categoryOfWork2.checked = false;
+        e = 0;
+    }
+}
+
+function cat6Che(){
+    
+    if( f == 0 ){
+        form.catGet4.value = "1";
+        form.categoryOfWork4.checked = true;
+        f = 1;
+    }else{
+        form.catGet4.value = "0";
+        form.categoryOfWork4.checked = false;
+        f = 0;
+    }
+}
+
+function cat7Che(){
+    
+    if( g == 0 ){
+        form.catGet6.value = "1";
+        form.categoryOfWork6.checked = true;
+        g = 1;
+    }else{
+        form.catGet6.value = "0";
+        form.categoryOfWork6.checked = false;
+        g = 0;
+    }
+}
+
+function cat8Che(){
+
+    if( h == 0 ){
+        form.catGet8.value = "1";
+        form.categoryOfWork8.checked = true;
+        h = 1;
+        form.categoryOfWork9.disabled = false;
+        // document.getElementById("other").setAttribute("style","background-color:red;");
+        document.getElementById("other").focus();
+    }else{
+        form.catGet8.value = "0";
+        form.categoryOfWork8.checked = false;
+        h = 0;
+        form.categoryOfWork9.disabled = true;
+        // form.categoryOfWork9.value = "";
+        document.getElementById("other").value = "";
     }
 }

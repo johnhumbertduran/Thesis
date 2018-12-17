@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Records Request and Inventory Management System of Data Center of ACC</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
     <link rel="stylesheet" href="styles/indexStyles.css">
 </head>
 <body>
@@ -143,15 +144,17 @@ if(isset($_POST["submit"])){
 
 
 
-<h1 class="heading">Records Request and Inventory Management System of Data Center of ACC</h1>
+<h2 class="heading">Records Request and Inventory Management System of Data Center of ACC</h2>
 
-<center><h1 class="logI">Log In</h1></center>
 
 <span class="warn"><h3><?php echo $logErr; ?></h3></span>
 
 <br/>
+<br/>
+<br/>
 <center>
 	<div id="nav">
+<center><h1 class="logI">Log In</h1></center>
 			
 			<form method="POST">
 		<table border="0" width="60%">
@@ -173,5 +176,6 @@ if(isset($_POST["submit"])){
 			</form>
 	</div>
 </center>
+
 </body>
 </html>
