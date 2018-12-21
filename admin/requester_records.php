@@ -8,6 +8,13 @@
     <link rel="icon" type="image/png" href="../images/logo.png">
     <!-- <link rel="stylesheet" type="text/css" media="screen" href="../styles/nav.css" /> -->
    <!-- <script src="main.js"></script> -->
+
+    <style>
+    #one{
+        background-color:#1f1f1f;
+    }
+    </style>
+
 </head>
 <body>
 

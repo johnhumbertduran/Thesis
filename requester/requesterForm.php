@@ -207,7 +207,7 @@
             </tr>
             <tr>
                 <td class="boldFont">Date:</td>
-                <td><input type="text" name="var_date" value="<?php echo date("m-d-y"); ?>" readonly></td>
+                <td><input type="text" name="var_date" value="<?php echo date("Y-m-d"); ?>" readonly></td>
             </tr>
             <tr>
                 <td class="boldFont">Mobile No.:</td>
