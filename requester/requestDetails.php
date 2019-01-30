@@ -199,7 +199,7 @@
                         $rfid = $_POST["categoryOfWork7"];
                     }
                     
-                    if(empty($_POST["catGet8"])){
+                    if(empty($_POST["categoryOfWork9"])){
                         
                         // $others = "";
 
@@ -208,13 +208,13 @@
                         // $others = $_POST["categoryOfWork8"];
                     
                         
-                        if(empty($_POST["categoryOfWork9"])){
+                        // if(empty($_POST["categoryOfWork9"])){
                             // $specified = "";
                             // echo"<script> alert('No data to be saved!');</script>";
-                        }else{
+                        // }else{
                             $specified = $_POST["categoryOfWork9"];
                               
-                        }
+                        // }
                     }
 
                     mysqli_query($connections, "INSERT INTO requestertbl (rollNo,reqName,room,dateTimeNeeded,dateSubmitted,telNo,stat)
@@ -253,7 +253,7 @@
 
     <center>
         <div class="table">
-            <form method="post" id="frm">
+            <form method="POST" id="frm">
 
     <div class="external_data">
     <input type="text" readonly name="transaction_no" value="<?php echo $transaction_no; ?>"><br>
@@ -303,7 +303,7 @@
                     
                     <tr>
                         <td colspan="3"  rows="3" cols="50"><center><textarea type="text" name="categoryOfWork9" id="other" value="<?php echo $specified; ?>" form="frm" placeholder="Others..." disabled></textarea></center></td>
-                        <!-- <td colspan="3"><center><input type="text" name="categoryOfWork9" id="other" size="70px" value="<?php echo $specified; ?>" disabled></center></td> -->
+                        <!-- <td colspan="3"><center><input type="text" name="categoryOfWork9" id="other" size="70px" value="" disabled></center></td> -->
                     </tr>
 
                     
