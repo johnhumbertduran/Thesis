@@ -211,7 +211,7 @@ font-size: .9em;
 	</tr>
 
 
-					#permanent delete kara kase kung soft delete hay ma agto imaw sa archived then pag e unarchived imaw hay ma agto ta maw sa records
+					<!-- #permanent delete kara kase kung soft delete hay ma agto imaw sa archived then pag e unarchived imaw hay ma agto ta maw sa records -->
 
 
 <?php

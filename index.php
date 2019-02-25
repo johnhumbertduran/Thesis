@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Records Request and Inventory Management System of Data Center of ACC</title>
+    <title>Job Request and IT Equipment Monitoring</title>
+    <!-- <title>Records Request and Inventory Management System of Data Center of ACC</title> -->
     <link rel="icon" type="image/png" href="images/logo.png">
     <link rel="stylesheet" href="styles/indexStyles.css">
 </head>
@@ -144,7 +145,7 @@ if(isset($_POST["submit"])){
 
 
 
-<h2 class="heading">Records Request and Inventory Management System of Data Center of ACC</h2>
+<h2 class="heading">Job Request Application and IT Equipment Monitoring of Data Center of Aklan Catholic College</h2>
 
 
 <span class="warn"><h3><?php echo $logErr; ?></h3></span>
