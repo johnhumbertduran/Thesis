@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Technician Main</title>
+    <title>Requester Records</title>
+    <!-- <title>Technician Main</title> -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="../images/logo.png">
     <!-- <link rel="stylesheet" type="text/css" media="screen" href="../styles/nav.css" /> -->
