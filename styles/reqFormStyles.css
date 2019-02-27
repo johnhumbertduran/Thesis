@@ -16,12 +16,13 @@ h1{
 }
 
 .table{
-    background-color: #808080;
+    background-color: #15cf44;
     position: absolute;
     top: 25%;
     left: 30%;
     padding: 10px;
-    border-radius: 6px;
+    border-radius: 20px;
+    border:3px solid #fff;
     width: 40%;
     opacity: .9;
     box-shadow: -5px 5px 7px black;
@@ -52,7 +53,7 @@ button{
 
 button:hover{
     box-shadow: -3px 3px 5px black;
-    background-color: #252525;
+    background-color: #005315;
     color: #ffffff;
 }
 

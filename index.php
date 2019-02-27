@@ -161,7 +161,7 @@ if(isset($_POST["submit"])){
 		<table border="0" width="60%">
 			
 			<tr>
-				<td><input type="text" name="userName" value="<?php echo $userName; ?>" placeholder="User Name" class="inTypes"></td>
+				<td><input type="text" name="userName" autocomplete="off" value="<?php echo $userName; ?>" placeholder="User Name" class="inTypes"></td>
 			</tr>
 		
 			<tr>

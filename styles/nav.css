@@ -1,5 +1,5 @@
 .nav{
-    background-color: #888888;
+    background-color: #058124;
     text-decoration: none;
     font-size: 1.5em;
     padding: 10px 20px;
@@ -9,13 +9,13 @@
 }
 
 .nav:hover{
-    background-color: #1f1f1f;
+    background-color: #01310d;
 }
 
 
 
 #nav{
-    background-color: #888888;
+    background-color: #058124;
     /* background-color: #c0c0c0; */
     padding: 10px;
     width:100%;
@@ -55,7 +55,7 @@
 }
 
 .view{
-    background-color: #1aadda;
+    background-color: #0880a5;
     /* background-color: #1aadda; */
     color:#ffffff;
     text-decoration: none;
@@ -76,7 +76,7 @@
 .accom:hover{
     background-color: #ffda37;
     box-shadow: -3px 3px 5px #080808f1;
-    /* color: #111111; */
+    color: #111111;
 }
 
 .accomRet:hover{
@@ -86,6 +86,6 @@
 }
 
 .view:hover{
-    background-color: #52d1f8;
+    background-color: #1aadda;
     box-shadow: -3px 3px 5px #080808f1;
 }

@@ -16,7 +16,7 @@ h1{
 }
 
 .table{
-    background-color: #808080;
+    background-color: #15cf44;
     position: absolute;
     top: 25%;
     left: 25%;
@@ -74,7 +74,7 @@ button:hover{
 
 .button:hover{
     box-shadow: -3px 3px 5px black;
-    background-color: #252525;
+    background-color: #005315;
     color: #ffffff;
 }
 
@@ -90,7 +90,7 @@ button:hover{
 #other:enabled{
     height: 100px;
     resize: none;
-    background-color: #2b2b2b;
+    background-color: #006b1b;
     width: 500px;
     margin: 0;
 }
@@ -106,7 +106,7 @@ button:hover{
 }
 
 .che{
-    background-color: rgb(63, 63, 63);
+    background-color: #079b2c;
     border-radius: 5px;
     padding:2px 5px;
     text-decoration: none;
@@ -114,5 +114,5 @@ button:hover{
 }
 
 .che:hover{
-    background-color: rgb(15, 15, 15)
+    background-color: #001806;
 }

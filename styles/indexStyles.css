@@ -1,5 +1,5 @@
 html{
-    background-color: #d6d6d6;
+    background-color: #068d28;
     background:url("../images/logo.png");
     background-position: top center;
     background-repeat: no-repeat;
@@ -13,7 +13,7 @@ html{
 
 .logI{
 color:#ffffff;
-background:#575757;
+background:#068d28;
 text-align:center;
 /* border-radius: 6px; */
 padding-bottom:5px;
@@ -22,7 +22,7 @@ width: 100%;
 
 .heading{
 color:#ffffff;
-background:#636363;
+background:#15cf44;
 text-align:center;
 /* margin-top:-7px; */
 padding:15px;
@@ -36,14 +36,14 @@ position:relative;
 box-shadow:0 1px 6px #000;
 border-radius: 20px;
 border:3px solid #fff;
-background-color: #919090;
+background-color: #15cf44;
 width:30%;
 padding:30px 0;
 }
 
 .inBoxes{
 padding:5px;
-background:#444242;
+background:#09922c;
 border-radius: 10px;
 border:none;
 color:#fff;
@@ -62,7 +62,7 @@ font-weight: bold;
 border:none;
 border-bottom:3px solid rgba(0,0,0, .3);
 padding:8px;
-background:#bbbbbb;
+background:#53f17a;
 border-radius:10px;
 color:#000;
 }

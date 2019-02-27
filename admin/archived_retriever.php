@@ -48,7 +48,7 @@ color:#fff;
 
 
 #modal{
-background-color:rgba(0, 0, 0, .5);
+background-color:#a7090980;
 /* display:none; */
 position:fixed;
 overflow:auto;
@@ -60,7 +60,7 @@ left:0;
 }
 
 .modal-content{
-background-color:#3a3a3a;
+background-color:#bb1717;
 border:5px solid #fff;
 position:absolute;
 width:27%;
@@ -80,7 +80,7 @@ z-index:2;
 
 
 .modal_content{
-background-color:#3a3a3a;
+background-color:#bb1717;
 border:5px solid #fff;
 position:absolute;
 width:30%;
@@ -100,7 +100,7 @@ z-index:2;
 
 
 .request_modal_content{
-background-color:#3a3a3a;
+background-color:#bb1717;
 border:5px solid #fff;
 position:absolute;
 width:40%;
@@ -184,7 +184,7 @@ font-size: .9em;
 .label{color:#fff;}
 
 #two{
-    background-color:#1f1f1f;
+    background-color:#01310d;
 }
 
 
@@ -254,7 +254,7 @@ font-size: .9em;
 			<td><center>$db_dateSubmitted</center></td>
 			<td><center>$db_dateTimeNeeded</center></td>
 			<td><center>$db_telNo</center></td>
-			<td><center><a href='?jScript=$jScript && newScript=$new_Script && view_Request=$get_Update && ver_0x=$roll&&$get_Delete ' class='view'>View Request</a></center></td>
+			<td><center><a href='?jScript=$jScript && newScript=$new_Script && view_Request=$get_Update && ver_0x=$roll&&$get_Delete ' class='view'>View</a></center></td>
 			<td>
 				<center>
 					<br/>

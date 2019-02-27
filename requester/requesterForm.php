@@ -195,11 +195,11 @@
             </tr>
             <tr>
                 <td class="boldFont"><span class="star"><sup><?php echo$requester_name_err; ?></span> Requester Name:</td>
-                <td><input type="text" name="requester_name" id="req" value="<?php echo $requester_name; ?>" required autofocus></td>
+                <td><input type="text" name="requester_name" autocomplete="off" id="req" value="<?php echo $requester_name; ?>" required autofocus></td>
             </tr>
             <tr>
                 <td class="boldFont">Room/Office:</td>
-                <td><input type="text" name="room_office" value="<?php echo $room_office; ?>" required></td>
+                <td><input type="text" name="room_office" autocomplete="off" value="<?php echo $room_office; ?>" required></td>
             </tr>
             <tr>
                 <td class="boldFont">Date Needed:</td>
@@ -211,7 +211,7 @@
             </tr>
             <tr>
                 <td class="boldFont">Mobile No.:</td>
-                <td><input type="text" name="telephone_mobile_no" value="<?php echo $telephone_mobile_no; ?>"  maxlength="11" onkeypress='return isNumberKey(event)' required></td>
+                <td><input type="text" name="telephone_mobile_no" autocomplete="off" value="<?php echo $telephone_mobile_no; ?>"  maxlength="11" onkeypress='return isNumberKey(event)' required></td>
             </tr>
 
             <tr><td colspan="2"><br><center><button type="submit" name="next">Next</button></center></td></tr>
