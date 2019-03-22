@@ -1,6 +1,6 @@
 html{
-    background-color: #d6d6d6;
-    background:url("../images/logo.png");
+    /* background-color: #d6d6d6; */
+    background:url("../images/bg.jpg");
     background-position: top center;
     background-repeat: no-repeat;
 }
@@ -18,7 +18,7 @@ h1{
 .table{
     background-color: #15cf44;
     position: absolute;
-    top: 25%;
+    top: 20%;
     left: 25%;
     padding: 10px;
     border-radius: 6px;
@@ -39,8 +39,8 @@ h1{
 .boldFont{
     /* text-shadow: -1px 1px #ffffff; */
     text-align: right;
-    color: #ffffff;
-    font-size: 1.5em;
+    /* color: #ffffff; */
+    /* font-size: 1.5em; */
     font-weight: bold;
 }
 

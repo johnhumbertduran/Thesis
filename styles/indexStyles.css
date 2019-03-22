@@ -1,6 +1,6 @@
 html{
-    background-color: #068d28;
-    background:url("../images/logo.png");
+    /* background-color: #068d28; */
+    background:url("../images/bg.jpg");
     background-position: top center;
     background-repeat: no-repeat;
 }

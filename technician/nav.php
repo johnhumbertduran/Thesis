@@ -10,7 +10,7 @@
 	position:absolute;
 	padding:5px 11px;
 	top:0;
-	left:12.1%;
+	left:8%;
 	color:#fff;
 }
 
@@ -54,7 +54,7 @@ $notif3 = sha1(rand(1,9));
 
 ?>
 	<div id="nav">
-<a href="requester_records?<?php echo"redir_=$notif1&&request=$notif2&&perm=$notif3"; ?>" class="nav" id="one">View Requests</a><a href="../logout.php" class="nav">Log Out</a>
+<a href="requester_records?<?php echo"redir_=$notif1&&request=$notif2&&perm=$notif3"; ?>" class="nav" id="one">Requests</a><a href="../logout.php" class="nav">Log Out</a>
 <!-- <a href="requester_records?<?php echo"redir_=$notif1&&request=$notif2&&perm=$notif3"; ?>" class="nav" id="one">View Requests</a><a href="<?php echo"?redir_=$notif1&&request=$notif2&&perm=$notif3"; ?>" class="nav" id="two">Notification</a><a href="currentElection" class="nav" id="three">Nav 3</a><a href="previousElection" class="nav" id="four">Nav 4</a><a href="studentRecord" class="nav" id="five">Nav 5</a><a href="candidateRecord" class="nav" id="six">Nav 6</a><a href="../logout.php" class="nav">Log Out</a> -->
 
 	</div>

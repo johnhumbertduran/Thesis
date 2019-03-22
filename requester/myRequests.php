@@ -3,14 +3,12 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Requester Records</title>
-    <!-- <title>Technician Main</title> -->
+    <title>My Requests</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="../images/logo.png">
-    <!-- <link rel="stylesheet" type="text/css" media="screen" href="../styles/nav.css" /> -->
-   <!-- <script src="main.js"></script> -->
-   <script src="js/jQuery.js"></script>
-   <style>
+    <link rel="stylesheet" type="text/css" media="screen" href="../styles/myRequestSyles.css" />
+    <script src="main.js"></script>
+    <style>
     #one{
         background-color:#01310d;
     }
@@ -18,7 +16,7 @@
 </head>
 <body>
 
-    <?php
+<?php
 	
 	session_start();
 
@@ -33,7 +31,7 @@
 		$fetch = mysqli_fetch_assoc($authentication);
 		$account_type = $fetch["account_type"];
 	
-		if($account_type != 2){
+		if($account_type != 3){
 		
 			echo "<script>window.location.href='../forbidden.php';</script>";
 		
@@ -48,26 +46,26 @@
 
 ?>
 
-	<center>
+<center>
 		<h1>Requester Records</h1>
 	</center>
-    
-    
-    <?php
+	
+        <?php
    	if(empty($_GET['jScript']) ){
 
         ?>
-            <script>
+    <script>
     
-    setInterval(function(){
+        setInterval(function(){
+        
+            // $('#retriever').load('requestRetriever.php');
+        
+        
+        }, 1000);
     
-        $('#retriever').load('retriever.php');
+    </script>
     
-    
-    }, 1000);
-
-</script>
-<?php
+    <?php
 
 	}else{}
     
@@ -76,15 +74,12 @@
     
     <div id="retriever">
     
-    <?php	include("retriever.php"); ?>
+    <?php	include("requestRetriever.php"); ?>
     
     </div>
     
-    <?php
-
-        
-    ?>
     
+    <script src="js/jQuery.js"></script>
 
 </body>
 </html>

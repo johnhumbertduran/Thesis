@@ -193,14 +193,14 @@
                 <td class="boldFont">Transaction No.:</td>
                 <td><input type="text" name="transaction_no" value="<?php echo $transaction_no; ?>" readonly></td>
             </tr>
-            <tr>
+            <!-- <tr>
                 <td class="boldFont"><span class="star"><sup><?php echo$requester_name_err; ?></span> Requester Name:</td>
                 <td><input type="text" name="requester_name" autocomplete="off" id="req" value="<?php echo $requester_name; ?>" required autofocus></td>
             </tr>
             <tr>
                 <td class="boldFont">Room/Office:</td>
                 <td><input type="text" name="room_office" autocomplete="off" value="<?php echo $room_office; ?>" required></td>
-            </tr>
+            </tr> -->
             <tr>
                 <td class="boldFont">Date Needed:</td>
                 <td><input type="date" name="date_time_needed" value="<?php echo $date_time_needed; ?>" required></td>
@@ -209,10 +209,10 @@
                 <td class="boldFont">Date:</td>
                 <td><input type="text" name="var_date" value="<?php echo date("Y-m-d"); ?>" readonly></td>
             </tr>
-            <tr>
+            <!-- <tr>
                 <td class="boldFont">Mobile No.:</td>
                 <td><input type="text" name="telephone_mobile_no" autocomplete="off" value="<?php echo $telephone_mobile_no; ?>"  maxlength="11" onkeypress='return isNumberKey(event)' required></td>
-            </tr>
+            </tr> -->
 
             <tr><td colspan="2"><br><center><button type="submit" name="next">Next</button></center></td></tr>
         </table>

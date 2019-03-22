@@ -1,6 +1,6 @@
 html{
-    background-color: #d6d6d6;
-    background:url("../images/logo.png");
+    /* background-color: #d6d6d6; */
+    background:url("../images/bg.jpg");
     background-position: top center;
     background-repeat: no-repeat;
 }
@@ -16,14 +16,14 @@ h1{
 }
 
 .table{
-    background-color: #808080;
+    background-color: #15cf44;
     position: absolute;
     top: 25%;
     left: 30%;
     padding: 10px;
     border-radius: 20px;
     width: 40%;
-    opacity: .9;
+    opacity: .95;
     box-shadow: -5px 5px 7px black;
 }
 
@@ -69,5 +69,9 @@ button:hover{
 }
 
 #catchAcc{
+    display: none;
+}
+
+#catchPrior{
     display: none;
 }

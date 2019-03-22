@@ -89,3 +89,9 @@
     background-color: #1aadda;
     box-shadow: -3px 3px 5px #080808f1;
 }
+
+.toRight{
+    position: absolute;
+    right:8px;
+    top:8px;
+}

@@ -22,7 +22,7 @@
 	
 		$userName = $_SESSION["userName"];
 		
-		$authentication = mysqli_query($connections, "SELECT * FROM usertbl WHERE userName='$userName' ");
+		$authentication = mysqli_query($connections, "SELECT * FROM usertbl WHERE username='$userName' ");
 		$fetch = mysqli_fetch_assoc($authentication);
 		$account_type = $fetch["account_type"];
 	

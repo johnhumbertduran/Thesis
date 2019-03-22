@@ -187,6 +187,23 @@ font-size: .9em;
     background-color:#01310d;
 }
 
+.low{
+	background-color: #00ff00;
+	padding: 23px 0;
+	/* color:#ffffff; */
+}
+
+.medium{
+	background-color: #dfe217;
+	padding: 23px 0;
+}
+
+.high{
+	background-color: #a70909;
+	padding: 23px 0;
+	color:#ffffff;
+}
+
 </style>
 
     <link rel="stylesheet" type="text/css" media="screen" href="../styles/nav.css" />
@@ -200,13 +217,14 @@ font-size: .9em;
 	<tr>
 	
 		<td width="10%" class="tdTop"><center><b>Transaction No</b></center></td>
-		<td width="16%" class="tdTop"><center><b>Name</b></center></td>
-		<td width="5%" class="tdTop"><center><b>Room</b></center></td>
+		<td width="10%" class="tdTop"><center><b>Name</b></center></td>
+		<td width="8%" class="tdTop"><center><b>Room</b></center></td>
 		<td width="16%" class="tdTop siz"><center><b>Date Submitted</b></center></td>
 		<td width="16%" class="tdTop siz"><center><b>Date Needed</b></center></td>
-		<td width="10%" class="tdTop"><center><b>Telephone No</b></center></td>
-		<td width="10%" class="tdTop siz"><center><b>View Request</b></center></td>
-		<td width="19%" class="tdTop"><center><b>Action</b></center></td>
+		<td width="8%" class="tdTop"><center><b>Mobile No</b></center></td>
+		<td width="10%" class="tdTop siz"><center><b>Requests</b></center></td>
+		<td width="10%" class="tdTop siz"><center><b>Priority Level</b></center></td>
+		<td width="20%" class="tdTop"><center><b>Action</b></center></td>
 	
 	</tr>
 
@@ -220,18 +238,19 @@ font-size: .9em;
 	
 	$newName = $newRoom = $newDateNeed = $newDateSub = $newTel = "";
 	
-	$retrieve_query = mysqli_query($connections,"SELECT * FROM requestertbl WHERE stat='3' ORDER BY rollNo DESC ");
+	$retrieve_query = mysqli_query($connections,"SELECT * FROM requesttbl WHERE stat='3' ORDER BY rollNo DESC ");
 	
 	while($row_requesters = mysqli_fetch_assoc($retrieve_query)){
 	
 	$db_rollNo = $row_requesters["rollNo"];
 	
 	$roll = $row_requesters["rollNo"];
-	$db_reqName = $row_requesters["reqName"];
+	$db_reqName = $row_requesters["requester"];
 	$db_room = $row_requesters["room"];
-	$db_dateTimeNeeded = $row_requesters["dateTimeNeeded"];
-	$db_dateSubmitted = $row_requesters["dateSubmitted"];
-	$db_telNo = $row_requesters["telNo"];
+	$db_dateTimeNeeded = $row_requesters["date_needed"];
+	$db_dateSubmitted = $row_requesters["date_submitted"];
+	$db_telNo = $row_requesters["mobnum"];
+	$db_PL = $row_requesters["priority_level"];
 		
 		$jScript = md5(rand(1,9));
 		
@@ -248,12 +267,13 @@ font-size: .9em;
 		
 			<td><center>$db_rollNo</center></td>
 			<td><center>$db_reqName</center></td>
-			<td width='5%'><center>$db_room</center></td>
+			<td><center>$db_room</center></td>
 			<td><center>$db_dateSubmitted</center></td>
 			<td><center>$db_dateTimeNeeded</center></td>
-			<td width='10%'><center>$db_telNo</center></td>
-			<td width='10%'><center><a href='?jScript=$jScript && newScript=$new_Script && view_Request=$get_Update && ver_0x=$roll&&$get_Delete ' class='view'>View</a></center></td>
-			<td width='19%'>
+			<td><center>$db_telNo</center></td>
+			<td><center><a href='?jScript=$jScript && newScript=$new_Script && view_Request=$get_Update && ver_0x=$roll&&$get_Delete ' class='view'>View</a></center></td>
+			<td><center>"; if ($db_PL == '1'){ echo "<div class='low'><b>Low</b></div>";} else { if ($db_PL == '2'){ echo "<div class='medium'><b>Medium</b></div>";} else { if ($db_PL == '3'){ echo "<div class='high'><b>High</b></div>";} } } echo "</center></td>			
+			<td>
 				<center>
 					<br/>
 					
@@ -296,15 +316,15 @@ font-size: .9em;
 
 		$roll = $_GET['ver_01'];
 	
-		$num = mysqli_query($connections, "SELECT * FROM requestertbl where rollNo='$roll' ");
+		$num = mysqli_query($connections, "SELECT * FROM requesttbl where rollNo='$roll' ");
 	
 		$rowNum = mysqli_fetch_assoc($num);
 		
-		$db_Requester = $rowNum["reqName"];
+		$db_Requester = $rowNum["requester"];
 		
 				if(isset($_POST["update"])){
 								
-								mysqli_query($connections, "UPDATE requestertbl SET stat = '1' WHERE rollNo = '$roll' ");
+								mysqli_query($connections, "UPDATE requesttbl SET stat = '2' WHERE rollNo = '$roll' ");
 								
 								echo"<script>window.location.href='?'; alert('Record succesfully Updated!');</script>";
 
@@ -323,7 +343,7 @@ font-size: .9em;
 
                             <br>
 
-				            <font style="text-shadow:0 2px 1px #fff, 0 -2px 1px #fff, 2px 0 1px #fff, -2px 0 1px #fff;" color="black"><b><?php echo "Return"?></br><font style="text-shadow:0 2px 1px #fff, 0 -2px 1px #fff, 2px 0 1px #fff, -2px 0 1px #fff;" size="5em" color="red"><?php echo $db_Requester;?></font><br><?php echo " to records?"; ?></b></font>
+				            <font style="text-shadow:0 2px 1px #fff, 0 -2px 1px #fff, 2px 0 1px #fff, -2px 0 1px #fff;" color="black"><b><?php echo "Return"?></br><font style="text-shadow:0 2px 1px #fff, 0 -2px 1px #fff, 2px 0 1px #fff, -2px 0 1px #fff;" size="5em" color="blue"><?php echo $db_Requester;?></font><br><?php echo " to records?"; ?></b></font>
 							
 				
 							<br/>
@@ -350,11 +370,11 @@ font-size: .9em;
 		$roll = $_GET['ver_02'];
 	
 
-		$num = mysqli_query($connections, "SELECT * FROM requestertbl where rollNo='$roll' ");
+		$num = mysqli_query($connections, "SELECT * FROM requesttbl where rollNo='$roll' ");
 	
 		$rowNum = mysqli_fetch_assoc($num);
 		
-		$db_Requester = $rowNum["reqName"];
+		$db_Requester = $rowNum["requester"];
 		
 		
 		
